@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>快速排序算法</title>
+</head>
+<body>
+
+
+
+	<script type="text/javascript">
+		var arr = [45,47,23,87,6,2,69,33,68,12,45,73,596,123,42,84];
+		var times = 0;
+
+		function quickSort(arr) {
+			let middle = arr[0];
+			let leftArr = [], rightArr = [];
+
+			for(let i = 1, j = arr.length; i < j; i++){
+				arr[i] <= middle ? leftArr.push(arr[i]) : rightArr.push(arr[i]);
+				times++;
+			}
+
+			leftArr.push(middle);
+
+			if(leftArr.length > 2){
+				leftArr = arguments.callee(leftArr);
+			}
+
+			if(rightArr.length >= 2){
+				rightArr = arguments.callee(rightArr);
+			}
+			
+			return leftArr.concat(rightArr);
+		}
+
+		console.info(quickSort(arr));
+		console.info('loops:',times);
+
+	</script>
+</body>
+</html>
