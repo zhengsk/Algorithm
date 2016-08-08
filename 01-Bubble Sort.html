@@ -4,16 +4,28 @@
 	<title>冒泡排序算法</title>
 </head>
 <body>
-
-
-
 	<script type="text/javascript">
 		var arr = [45,47,23,87,6,2,69,33,68,12,45,73,596,123,42,84];
 		var times = 0;
 
+		// function bubbleSort(arr) {
+		// 	for(let i = 0, j = arr.length; i < j; i++){
+		// 		for(let m = 0; m < j; m++){
+		// 			if(arr[m] > arr[m+1]){
+		// 				let item = arr[m];
+		// 				arr[m] = arr[m+1];
+		// 				arr[m+1] = item;
+		// 			}
+		// 			++times;
+		// 		}
+	
+		// 	}
+		// 	return arr;
+		// }
+
 		function bubbleSort(arr) {
 			for(let i = 0, j = arr.length; i < j; i++){
-				for(let m = 0, n = j-i-1; m < n; m++){
+				for(let m = 0; m < j; m++){
 					if(arr[m] > arr[m+1]){
 						let item = arr[m];
 						arr[m] = arr[m+1];

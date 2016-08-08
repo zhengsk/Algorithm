@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>选择排序算法</title>
+</head>
+<body>
+
+
+
+	<script type="text/javascript">
+		var arr = [45,47,23,87,6,2,69,33,68,12,45,73,596,123,42,84];
+		var times = 0;
+
+		// 方法一 选择排序 冒泡
+		function selectionSort(arr) {
+			for(let i = 0, j = arr.length; i < j; i++){
+				for(let m = 0, n = j-i-1; m < n; m++){
+					if(arr[m] > arr[m+1]){
+						let item = arr[m];
+						arr[m] = arr[m+1];
+						arr[m+1] = item;
+					}
+					++times;
+				}
+	
+			}
+			return arr;
+		}
+
+		// 方法二 选择排序 下层
+		// function selectionSort(arr) {
+		// 	for(let i = 0, j = arr.length; i < j; i++){
+		// 		for(let m = i + 1, n = j; m < n; m++){
+		// 			if(arr[m] < arr[i]){
+		// 				let item = arr[m];
+		// 				arr[m] = arr[i];
+		// 				arr[i] = item;
+		// 			}
+		// 			++times;
+		// 		}
+	
+		// 	}
+		// 	return arr;
+		// }
+
+		console.info(selectionSort(arr));
+		console.info('loops:',times);
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>插入排序算法</title>
+</head>
+<body>
+
+
+
+	<script type="text/javascript">
+		var arr = [45,47,23,87,6,2,69,33,68,12,45,73,596,123,42,84];
+		var times = 0;
+
+		function insertSort(arr) {
+			for(let i = 0, j = arr.length; i < j; i++){
+				let item = arr[i];
+				for(let m = 0; m < i; m++){
+					times++;
+					if(arr[i] < arr[m]){
+						let k = i;
+						while(k >= m){
+							arr[k] = arr[k-1];
+							k--;
+						}
+						arr[m] = item;
+						break;
+					}
+				}
+	
+			}
+			return arr;
+		}
+
+		console.info(insertSort(arr));
+		console.info('loops:',times);
+
+	</script>
+</body>
+</html>
